@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "author": "Ariyan Kusharthantho",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 86.4, "left": -62.36, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 140.8,
+      "left": 92,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-ds1307", "id": "rtc1", "top": -5.4, "left": 67.3, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "lcd1:GND", "esp:GND.1", "cyan", [ "v76.8", "h-153.75" ] ],
+    [ "lcd1:VCC", "esp:5V", "red", [ "h9.6", "v115.3" ] ],
+    [ "lcd1:SDA", "esp:21", "black", [ "v0.2", "h-57.6" ] ],
+    [ "lcd1:SCL", "esp:22", "black", [ "v0.3", "h-57.6" ] ],
+    [ "rtc1:SDA", "esp:21", "black", [ "h9.6", "v143.7" ] ],
+    [ "rtc1:SCL", "esp:22", "black", [ "v105.4" ] ],
+    [ "rtc1:5V", "esp:5V", "red", [ "h-9.6", "v278", "h-124.95" ] ],
+    [ "rtc1:GND", "esp:GND.2", "cyan", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
